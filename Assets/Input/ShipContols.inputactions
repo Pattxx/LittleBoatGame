@@ -1,0 +1,64 @@
+{
+    "version": 1,
+    "name": "ShipContols",
+    "maps": [
+        {
+            "name": "ShipControl",
+            "id": "0c6438d1-7d0d-486e-8f62-dd6151aab269",
+            "actions": [
+                {
+                    "name": "Steer",
+                    "type": "Value",
+                    "id": "04152dd8-8581-4335-a7e0-0462a9e3b63b",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true,
+                    "priority": 0
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "1D Axis",
+                    "id": "a8298a20-5e54-45e0-bc09-d814838bcb9e",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Steer",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "192b23eb-b4d5-458b-b73a-f7e7d52243e4",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Steer",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "01872967-57ef-4745-88b8-e90246d0a39d",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Steer",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Keyboard",
+            "bindingGroup": "Keyboard",
+            "devices": []
+        }
+    ]
+}
