@@ -31,8 +31,8 @@ public sealed class ShipHUDController : MonoBehaviour
             return;
         }
        
-       _sailAngleLabel = $"Sail Open: {_sailOpenLabel.SailAngle: 0}%";
-       _sailOpenLabel.text = $"Sail Open: {_sailOpenLabel.OpenPrecentage: 0.0}°";
+       //_sailAngleLabel = $"Sail Open: {_sailOpenLabel.SailAngle: 0}%";
+       //_sailOpenLabel.text = $"Sail Open: {_sailOpenLabel.OpenPrecentafe: 0.0}°";
     }
 
 }
