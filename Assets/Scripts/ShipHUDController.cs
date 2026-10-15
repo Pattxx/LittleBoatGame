@@ -19,7 +19,7 @@ public sealed class ShipHUDController : MonoBehaviour
 
     private void OnEnable()
     {
-        VisualElement root = _uiDocument.rootVisualElement;
+         VisualElement root = _uiDocument.rootVisualElement;
         _sailOpenLabel = root.Q<Label>("sailOpenLabel");
         _sailAngleLabel = root.Q<Label>("sailAngleLabel");
     }
@@ -31,8 +31,8 @@ public sealed class ShipHUDController : MonoBehaviour
             return;
         }
        
-       //_sailAngleLabel = $"Sail Open: {_sailOpenLabel.SailAngle: 0}%";
-       //_sailOpenLabel.text = $"Sail Open: {_sailOpenLabel.OpenPrecentafe: 0.0}°";
+       _sailAngleLabel.text = $"Sail Angle: {_sailController.Angle: 0}%";
+       _sailOpenLabel.text = $"Sail Open: {_sailController.OpenPrecentafe: 0.0}°";
     }
 
 }

@@ -101,6 +101,26 @@ public partial class @ShipContols: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""initialStateCheck"": true,
                     ""priority"": 0
+                },
+                {
+                    ""name"": ""ChangeSailAngle"",
+                    ""type"": ""Button"",
+                    ""id"": ""d5735f9a-1041-453f-b823-7e5115a6e756"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false,
+                    ""priority"": 0
+                },
+                {
+                    ""name"": ""OpenCloseSail"",
+                    ""type"": ""Button"",
+                    ""id"": ""6c50fcd6-ee39-4505-aca5-fe14707b945d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false,
+                    ""priority"": 0
                 }
             ],
             ""bindings"": [
@@ -139,67 +159,67 @@ public partial class @ShipContols: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""1D Axis"",
-                    ""id"": ""551df99d-cd20-44f9-921c-ca9eab437468"",
+                    ""id"": ""c960bfd3-8cea-4e26-a631-eb68748de158"",
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Steer"",
+                    ""action"": ""ChangeSailAngle"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": ""negative"",
-                    ""id"": ""94a09cc7-f542-4c93-9463-d010c440aa97"",
+                    ""id"": ""08df26ab-c89a-436d-93fc-b6d57cedfa70"",
                     ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Steer"",
+                    ""action"": ""ChangeSailAngle"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""positive"",
-                    ""id"": ""7057bd8e-df89-4ec9-9a0c-c0e847fc8f70"",
+                    ""id"": ""aa867657-8970-45d8-b242-23455e406141"",
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Steer"",
+                    ""action"": ""ChangeSailAngle"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""1D Axis"",
-                    ""id"": ""0c2faa60-1653-4387-9504-fe31ee231678"",
+                    ""id"": ""9f532a8c-8d03-41b1-a0b7-2096a25be9d3"",
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Steer"",
+                    ""action"": ""OpenCloseSail"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": ""negative"",
-                    ""id"": ""2d99a6f5-b53a-4477-9265-05297c74df4f"",
+                    ""id"": ""f841a102-78ce-4c80-b614-b0fab6982648"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Steer"",
+                    ""action"": ""OpenCloseSail"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""positive"",
-                    ""id"": ""3344a3fc-7169-4561-a078-fe28f80b0dc0"",
+                    ""id"": ""9c648d4b-b3b6-4b4d-9a0e-20c29987018e"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Steer"",
+                    ""action"": ""OpenCloseSail"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -217,6 +237,8 @@ public partial class @ShipContols: IInputActionCollection2, IDisposable
         // ShipControl
         m_ShipControl = asset.FindActionMap("ShipControl", throwIfNotFound: true);
         m_ShipControl_Steer = m_ShipControl.FindAction("Steer", throwIfNotFound: true);
+        m_ShipControl_ChangeSailAngle = m_ShipControl.FindAction("ChangeSailAngle", throwIfNotFound: true);
+        m_ShipControl_OpenCloseSail = m_ShipControl.FindAction("OpenCloseSail", throwIfNotFound: true);
     }
 
     ~@ShipContols()
@@ -298,6 +320,8 @@ public partial class @ShipContols: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_ShipControl;
     private List<IShipControlActions> m_ShipControlActionsCallbackInterfaces = new List<IShipControlActions>();
     private readonly InputAction m_ShipControl_Steer;
+    private readonly InputAction m_ShipControl_ChangeSailAngle;
+    private readonly InputAction m_ShipControl_OpenCloseSail;
     /// <summary>
     /// Provides access to input actions defined in input action map "ShipControl".
     /// </summary>
@@ -313,6 +337,14 @@ public partial class @ShipContols: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "ShipControl/Steer".
         /// </summary>
         public InputAction @Steer => m_Wrapper.m_ShipControl_Steer;
+        /// <summary>
+        /// Provides access to the underlying input action "ShipControl/ChangeSailAngle".
+        /// </summary>
+        public InputAction @ChangeSailAngle => m_Wrapper.m_ShipControl_ChangeSailAngle;
+        /// <summary>
+        /// Provides access to the underlying input action "ShipControl/OpenCloseSail".
+        /// </summary>
+        public InputAction @OpenCloseSail => m_Wrapper.m_ShipControl_OpenCloseSail;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -342,6 +374,12 @@ public partial class @ShipContols: IInputActionCollection2, IDisposable
             @Steer.started += instance.OnSteer;
             @Steer.performed += instance.OnSteer;
             @Steer.canceled += instance.OnSteer;
+            @ChangeSailAngle.started += instance.OnChangeSailAngle;
+            @ChangeSailAngle.performed += instance.OnChangeSailAngle;
+            @ChangeSailAngle.canceled += instance.OnChangeSailAngle;
+            @OpenCloseSail.started += instance.OnOpenCloseSail;
+            @OpenCloseSail.performed += instance.OnOpenCloseSail;
+            @OpenCloseSail.canceled += instance.OnOpenCloseSail;
         }
 
         /// <summary>
@@ -356,6 +394,12 @@ public partial class @ShipContols: IInputActionCollection2, IDisposable
             @Steer.started -= instance.OnSteer;
             @Steer.performed -= instance.OnSteer;
             @Steer.canceled -= instance.OnSteer;
+            @ChangeSailAngle.started -= instance.OnChangeSailAngle;
+            @ChangeSailAngle.performed -= instance.OnChangeSailAngle;
+            @ChangeSailAngle.canceled -= instance.OnChangeSailAngle;
+            @OpenCloseSail.started -= instance.OnOpenCloseSail;
+            @OpenCloseSail.performed -= instance.OnOpenCloseSail;
+            @OpenCloseSail.canceled -= instance.OnOpenCloseSail;
         }
 
         /// <summary>
@@ -416,5 +460,19 @@ public partial class @ShipContols: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSteer(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ChangeSailAngle" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnChangeSailAngle(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "OpenCloseSail" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnOpenCloseSail(InputAction.CallbackContext context);
     }
 }

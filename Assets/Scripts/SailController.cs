@@ -16,6 +16,7 @@ public class SailController : MonoBehaviour
 
     public float Angle { get; private set;}
     public float OpenPrecentafe { get; private set;}
+    
     public Vector3 WorldSailForward => _sailPivot != null ? _sailPivot.forward : transform.forward;
 
     public void FixTrim(float inputAxis, float deltaTime)
@@ -27,6 +28,16 @@ public class SailController : MonoBehaviour
             _sailPivot.localRotation = Quaternion.Euler(0f, Angle, 0f);
         }
     }
-
-
+    public void FixOpen(float inputAxis, float deltaTime)
+    {
+        OpenPrecentafe = Mathf.Clamp(OpenPrecentafe + inputAxis * _openSpeed *  deltaTime, 0f, 100f);
+        
+        //sail scaling
+        if (_sailMeshTransform != null)
+        {
+            float sailScaleRatio = Mathf.Clamp(OpenPrecentafe / 100f, 0.05f, 1f);
+            Vector3 currScale = _sailMeshTransform.localScale;
+            _sailMeshTransform.localScale = new Vector3(currScale.x, sailScaleRatio*1f,currScale.z );
+        }
+    }
 }
