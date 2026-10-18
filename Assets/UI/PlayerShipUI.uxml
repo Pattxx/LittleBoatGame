@@ -1,5 +1,5 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement name="HUDContainer" style="flex-grow: 1; position: absolute; right: 20px; top: 20px; left: auto; bottom: auto; width: 148px; height: auto; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; background-color: rgba(0, 0, 0, 0.588); border-top-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-bottom-left-radius: 8px;">
+    <ui:VisualElement name="HUDContainer" style="flex-grow: 1; position: absolute; right: 33px; top: 18px; left: auto; bottom: auto; width: 180px; height: auto; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; background-color: rgba(0, 0, 0, 0.588); border-top-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-bottom-left-radius: 8px;">
         <ui:Label text="Sail Angle: 0.0°" name="sailAngleLabel" enable-rich-text="false" style="font-size: 16px; color: rgb(255, 255, 255); -unity-font-style: bold;"/>
         <ui:Label text="Sail Open: 0%" name="sailOpenLabel" style="font-size: 16px; color: rgb(255, 255, 255); -unity-font-style: bold;"/>
     </ui:VisualElement>
