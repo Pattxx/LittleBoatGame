@@ -13,9 +13,10 @@ The project demonstrates a ship navigating water without using Rigidbody physics
 ## Demo video
 
 
-<video src="Docs/BoatDemo.mp4" width="100%" controls autoplay loop muted>
-  Your browser does not support the video tag.
-</video>
+
+Uploading BoatDemo.mp4…
+
+
 
 ---
 
