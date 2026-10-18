@@ -11,11 +11,11 @@ The project demonstrates a ship navigating water without using Rigidbody physics
 ![image](https://github.com/Pattxx/LittleBoatGame/blob/main/Docs/BoatScreenShot1.png)
 
 ## Demo video
+Part 1
+https://github.com/user-attachments/assets/d8611521-9e75-466b-8dab-6e5f227766bf
 
-
-
-Uploading BoatDemo.mp4…
-
+Part 2
+https://github.com/user-attachments/assets/31aa9dba-a67e-4072-900b-b6c517744de3
 
 
 ---
